@@ -1,6 +1,6 @@
-# my_mint_form
+# my_vant_form
 
-> my mintUI form
+> my vantUI form
 
 ## Build Setup
 
