@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="form_ptcenter_report_select" model="ir.ui.view">
+        <field name="name">筛选导出</field>
+        <field name="model">ptcenter.report.select</field>
+        <field name="arch" type="xml">
+            <form string="选择班级和考核月份">
+                <group>
+                    <field name="myclass">班级</field>
+                    <field name="month">考核月份</field>
+                </group>
+                <footer>
+                    <button name="get_data_and_write_xlsx" class="btn-primary" string="导出" type="object"/>
+                    <button string="取消" class="btn-secondary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_ptcenter_report_select" model="ir.actions.act_window" >
+        <field name="name">筛选导出</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ptcenter.report.select</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="form_ptcenter_report_select"/>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="ptcenter_dkform_menu_action" sequence="20" name="菩提打卡" />
+    <menuitem id="ptcenter_report_sec_menu_action" sequence="50" name="筛选导出" parent="ptcenter.ptcenter_dkform_menu_action"
+              action="action_ptcenter_report_select" />
+</odoo>

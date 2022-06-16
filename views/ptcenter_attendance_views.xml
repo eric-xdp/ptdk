@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!--    form视图 作用与新建、修改、查看详情的页面-->
+    <record id="ptcenter_attendance_form_view" model="ir.ui.view">
+        <field name="name">班级有效人数</field>
+        <field name="model">ptcenter.attendance</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="user_num" string="有效人数"/>
+                        <field name="valid_month" string="有效月份" />
+                    </group>
+                    <group>
+                        <field name="class_own" string="所属班级" />
+                        <field name="remark" string="备注"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="ptcenter_attendance_tree_view" model="ir.ui.view">
+        <field name="name">班级有效人数</field>
+        <field name="model">ptcenter.attendance</field>
+        <field name="arch" type="xml">
+            <tree>
+                 <field name="user_num" string="有效人数"/>
+                <field name="valid_month" string="有效月份" />
+                <field name="class_own" string="所属班级" />
+                <field name="remark" string="备注"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ptcenter_attendance_act_window" model="ir.actions.act_window">
+        <field name="name">班级有效人数</field>
+        <field name="res_model">ptcenter.attendance</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="ptcenter_attendance_menu_action" parent="ptcenter_setting_menu_action"
+              name="班级考勤人数设置"
+              action="ptcenter_attendance_act_window" />
+</odoo>

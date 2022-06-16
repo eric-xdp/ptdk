@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!--    form视图 作用与新建、修改、查看详情的页面-->
+    <record id="ptcenter_class_standard_form_view" model="ir.ui.view">
+        <field name="name">考核标准</field>
+        <field name="model">ptcenter.class.standard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string="考核标准"/>
+                        <field name="valid_month" string="有效月份" />
+                    </group>
+                    <group>
+                        <field name="class_own" string="所属班级" />
+                        <field name="remark" string="考核说明"/>
+                    </group>
+                    <notebook>
+                        <page string="详细信息">
+                                <group>
+                                    <field name="standard_1" string="标准1" />
+                                    <field name="standard_2" string="标准2" />
+                                    <field name="standard_3" string="标准3" />
+                                    <field name="standard_4" string="标准4" />
+                                    <field name="standard_5" string="标准5" />
+                                    <field name="standard_6" string="标准6" />
+                                    <field name="standard_7" string="标准7" />
+                                    <field name="standard_8" string="标准8" />
+                                </group>
+                            </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="ptcenter_class_standard_tree_view" model="ir.ui.view">
+        <field name="name">考核标准</field>
+        <field name="model">ptcenter.class.standard</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="考核标准"/>
+                <field name="valid_month" string="有效月份"/>
+                <field name="class_own" string="所属班级" />
+                <field name="remark" string="考核说明"/>
+                <field name="standard_1" string="标准1" />
+                <field name="standard_2" string="标准2" />
+                <field name="standard_3" string="标准3" />
+                <field name="standard_4" string="标准4" />
+                <field name="standard_5" string="标准5" />
+                <field name="standard_6" string="标准6" />
+                <field name="standard_7" string="标准7" />
+                <field name="standard_8" string="标准8" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="ptcenter_class_standard_act_window" model="ir.actions.act_window">
+        <field name="name">考核标准</field>
+        <field name="res_model">ptcenter.class.standard</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="ptcenter_class_standard_menu_action" parent="ptcenter_setting_menu_action"
+              name="考核标准"
+              action="ptcenter_class_standard_act_window" />
+</odoo>

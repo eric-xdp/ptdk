@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!--    form视图 作用与新建、修改、查看详情的页面-->
+    <record id="ptcenter_user_form_view" model="ir.ui.view">
+        <field name="name">用户类型</field>
+        <field name="model">ptcenter.user.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ptcenter_user_type_act_window" model="ir.actions.act_window">
+        <field name="name">用户类型</field>
+        <field name="res_model">ptcenter.user.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="ptcenter_setting_menu_action"
+              sequence="40"
+              name="设置"
+              parent="ptcenter.ptcenter_dkform_menu_action" />
+
+    <menuitem id="ptcenter_user_type_menu_action"
+              parent="ptcenter_setting_menu_action"
+              name="用户类型"
+              action="ptcenter_user_type_act_window" />
+</odoo>

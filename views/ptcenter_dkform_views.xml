@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!--    form视图 作用与新建、修改、查看详情的页面-->
+    <record id="ptcenter_dkform_form_view" model="ir.ui.view">
+        <field name="name">打卡数据</field>
+        <field name="model">ptcenter.dkform</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" string="法名" />
+                            <field name="date" string="考核日期" />
+                            <field name="my_class" string="班级"/>
+                            <field name="week" string="考核周"/>
+                            <field name="month" string="考核月" />
+                        </group>
+                        <group>
+                            <field name="dingke" string="定课遍数"/>
+                            <field name="wensi" string="闻思时间"/>
+                            <field name="langsong" string="原文诵读"/>
+                            <field name="daka" string="菩提打卡次数"/>
+                            <field name="yiri" string="一日一转"/>
+                        </group>
+                    </group>
+                    <notebook>
+                            <page string="更多内容">
+                                <group>
+                                    <field name="cijing" string="慈经遍数"/>
+                                    <field name="zixiu" string="自修遍数"/>
+                                    <field name="yindao" string="引导吃素次数"/>
+                                    <field name="tougao" string="网站投稿次数"/>
+                                    <field name="fuwu" string="服务时长" />
+                                    <field name="dushu" string="举办读书会次数" />
+                                    <field name="cishan" string="服务大众"/>
+                                    <field name="chuandeng" string="传灯次数"/>
+                                    <field name="banxiu" string="是否班修"/>
+                                    <field name="zuxiu" string="是否组修" />
+                                    <field name="tigang" string="本周列提纲" />
+                                    <field name="create_date" string="创建时间" />
+                                    <field name="write_date" string="修改时间" />
+                                    <field name="write_device" string="填写设备" />
+                                    <field name="write_ip" string="填写IP" />
+                                    <field name="write_time" string="填写时长" />
+                                </group>
+                            </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- tree视图 作用与数据表页面 -->
+    <record id="ptcenter_dkform_tree_view" model="ir.ui.view">
+        <field name="name">打卡数据</field>
+        <field name="model">ptcenter.dkform</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="week" string="考核周"/>
+                <field name="month" string="考核月" />
+                <field name="my_class" string="班级"/>
+                <field name="name" string="法名"/>
+                <field name="date" string="考核日期"/>
+                <field name="dingke" string="定课遍数"/>
+                <field name="wensi" string="闻思时间"/>
+                <field name="cijing" string="慈经遍数"/>
+                <field name="langsong" string="原文诵读"/>
+                <field name="daka" string="菩提打卡次数"/>
+                <field name="yiri" string="一日一转"/>
+                <field name="zixiu" string="自修遍数"/>
+                <field name="yindao" string="引导吃素次数"/>
+                <field name="tougao" string="网站投稿次数"/>
+                <field name="fuwu" string="服务时长" />
+                <field name="dushu" string="举办读书会次数" />
+                <field name="cishan" string="服务大众"/>
+                <field name="chuandeng" string="传灯次数"/>
+                <field name="banxiu" string="是否班修"/>
+                <field name="zuxiu" string="是否组修" />
+                <field name="tigang" string="本周列提纲" />
+                <field name="create_date" string="创建时间" />
+                <field name="write_date" string="修改时间" />
+                <field name="write_device" string="填写设备" />
+                <field name="write_ip" string="填写IP" />
+                <field name="write_time" string="填写时长" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="ptcenter_dkform_act_window" model="ir.actions.act_window">
+        <field name="name">打卡数据</field>
+        <field name="res_model">ptcenter.dkform</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+
+    <menuitem id="ptcenter_dkform_menu_action" sequence="20" name="菩提打卡" />
+
+    <menuitem id="ptcenter_dkform_sec_menu_action" sequence="25" name="数据管理"
+              parent="ptcenter.ptcenter_dkform_menu_action"
+              action="ptcenter_dkform_act_window" />
+</odoo>

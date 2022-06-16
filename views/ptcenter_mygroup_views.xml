@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!--    form视图 作用与新建、修改、查看详情的页面-->
+    <record id="ptcenter_mygroup_form_view" model="ir.ui.view">
+        <field name="name">班小组</field>
+        <field name="model">ptcenter.mygroup</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                     <group>
+                        <group>
+                            <field name="city" string="城市"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="ptcenter_mygroup_tree_view" model="ir.ui.view">
+        <field name="name">班小组</field>
+        <field name="model">ptcenter.mygroup</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!--  法名、性别、年龄、微信、手机号、进班日期、用户类型  -->
+                <field name="name" string="班小组"/>
+                <field name="city" string="城市"/>
+<!--                <field name="standard_id" string="考核标准"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="ptcenter_mygroup_act_window" model="ir.actions.act_window">
+        <field name="name">班小组</field>
+        <field name="res_model">ptcenter.mygroup</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="ptcenter_mygroup_menu_action" parent="ptcenter_setting_menu_action"
+              name="班小组"
+              action="ptcenter_mygroup_act_window" />
+</odoo>

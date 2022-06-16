@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ptcenter_group_user,ptcenter.user,model_ptcenter_user,base.group_user,1,1,1,1
+access_ptcenter_type_group_user,ptcenter.user.type,model_ptcenter_user_type,base.group_user,1,1,1,1
+access_ptcenter_class_group_user,ptcenter.class,model_ptcenter_class,base.group_user,1,1,1,1
+access_ptcenter_class_standard_group_user,ptcenter.class.standard,model_ptcenter_class_standard,base.group_user,1,1,1,1
+access_ptcenter_mygroup_group_user,ptcenter.mygroup,model_ptcenter_mygroup,base.group_user,1,1,1,1
+access_ptcenter_dkform_group_user,ptcenter.dkform,model_ptcenter_dkform,base.group_user,1,1,1,1
+access_ptcenter_attendance_group_user,ptcenter.attendance,model_ptcenter_attendance,base.group_user,1,1,1,1
+access_ptcenter_report_select_group_user,ptcenter.report.select,model_ptcenter_report_select,base.group_user,1,1,1,1

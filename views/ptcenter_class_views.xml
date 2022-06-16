@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!--    form视图 作用与新建、修改、查看详情的页面-->
+    <record id="ptcenter_class_form_view" model="ir.ui.view">
+        <field name="name">班级管理</field>
+        <field name="model">ptcenter.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="mygroup_id" string="所属班小组"/>
+                            <field name="standard_id" string="班级标准"/>
+                            <field name="user_id" string="班级学员"/>
+                            <field name="run_date" string="启动日期"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ptcenter_class_tree_view" model="ir.ui.view">
+        <field name="name">班级管理</field>
+        <field name="model">ptcenter.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!--  法名、性别、年龄、微信、手机号、进班日期、用户类型  -->
+                <field name="name" string="班级名称"/>
+                <field name="mygroup_id" string="所属班小组"/>
+                <field name="standard_id" string="考核标准"/>
+                <field name="user_id" string="班级学员"/>
+                <field name="run_date" string="启动日期" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="ptcenter_class_act_window" model="ir.actions.act_window">
+        <field name="name">班级管理</field>
+        <field name="res_model">ptcenter.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="ptcenter_class_menu_action" parent="ptcenter_setting_menu_action"
+              name="班级管理"
+              action="ptcenter_class_act_window" />
+</odoo>

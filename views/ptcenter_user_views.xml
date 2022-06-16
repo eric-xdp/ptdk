@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!--    form视图 作用与新建、修改、查看详情的页面-->
+    <record id="ptcenter_user_form_view" model="ir.ui.view">
+        <field name="name">学员管理</field>
+        <field name="model">ptcenter.user</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" string="法名"/>
+                            <field name="user_status" string="学员状态" />
+                        </group>
+                        <group>
+                            <field name="phone" string="手机号"/>
+                            <field name="class_id" string="班级"/>
+                        </group>
+                    </group>
+                    <notebook>
+                            <page string="详细信息">
+                                <group>
+                                    <field name="sex" string="性别" />
+                                    <field name="age" string="年龄" />
+                                    <field name="wechat" string="微信" />
+                                    <field name="join_date" string="进班日期" />
+                                    <field name="user_type" string="用户类型" />
+                                    <field name="password" string="密码" />
+                                    <field name="user_seq" string="排序" />
+                                </group>
+                            </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- tree视图 作用与数据表页面 -->
+    <record id="ptcenter_user_tree_view" model="ir.ui.view">
+        <field name="name">学员管理</field>
+        <field name="model">ptcenter.user</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="法名"/>
+                <field name="sex" string="性别"/>
+                <field name="age" string="年龄"/>
+                <field name="wechat" string="微信"/>
+                <field name="phone" string="手机号"/>
+                <field name="class_id" string="所属班级" />
+                <field name="user_status" string="学员状态" />
+                <field name="join_date" string="进班日期" />
+                <field name="user_type" string="用户类型" />
+                <field name="password" string="密码" />
+                <field name="user_seq" string="排序" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="ptcenter_user_act_window" model="ir.actions.act_window">
+        <field name="name">用户管理</field>
+        <field name="res_model">ptcenter.user</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="ptcenter_dkform_menu_action" sequence="20" name="菩提打卡" />
+    <menuitem id="ptcenter_user_sec_menu_action" sequence="30" name="用户管理" parent="ptcenter.ptcenter_dkform_menu_action"
+              action="ptcenter_user_act_window" />
+</odoo>
