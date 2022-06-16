@@ -1,7 +1,7 @@
 # ptdk
 # 小觉打卡
 
-### 前端 vue  font
+### 前端 vue  front
 ### 后端 odoo15 
 ### 部署 docker compose
 
